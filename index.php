@@ -15,7 +15,27 @@
 </head>
 <body>
     <div class="title_login">
-        <button>Войти</button>
+        <button id="button_login">Войти</button>
+        <!--Модальное окно входа-->
+        <div id="modal_login" class="modal">
+            <div class="modal_content">
+                <h1>Вход</h1>
+                <span class="close_modal">&times</span>
+                <form action="login.php" method="post">
+                    <div class="form_group">
+                        <label for="email">Ваш email: </label>
+                        <input type="email" name="email"><br>
+                    </div>
+                    <div class="form_group">
+                        <label for="password">Ваш пароль: </label>
+                        <input type="password" name="password">
+                    </div>
+                    <button class="login" type="submit">Войти</button>
+                </form>
+            </div>
+        </div>
+        <script src="js/modal.js"></script>
+        <!-- -->
     </div>
     <div class="block1">
         <div class="row">
@@ -75,7 +95,7 @@
                                 <label>Подтвердите пароль:</label>
                                 <input type="password" name="password_re"/>
                             <p>Нажимая кнопку "Зарегистрироваться" Вы даете согласие на <u>обработку персональных данных</u>.</p>
-                            <button type="submit" name="signin">Зарегистрироваться</button>
+                            <button type="submit" name="signup" class="login">Зарегистрироваться</button>
                             </div>
                         </form>
                     </div>
