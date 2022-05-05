@@ -26,6 +26,8 @@ else{
 
             if ($user && password_verify($password, $user['password'])) {
                     echo 'Логин норм';
+                    session_start();
+                    $_SESSION['email']="$email";
                     header('Location: page_account.php');
                 } else {
                     echo 'Неверный email или пароль1';

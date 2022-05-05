@@ -15,7 +15,15 @@
 </head>
 <body>
     <div class="title_login">
-        <button id="button_login">Войти</button>
+
+        <?php
+        session_start();
+        if (!isset($_SESSION['email'])){
+            print ('<button id="button_login">Войти</button>');
+        }else{
+            print ('<button id="button_account"><a href="page_account.php">' . $_SESSION['email'] . '</a></button>');
+        }
+            ?>
         <!--Модальное окно входа-->
         <div id="modal_login" class="modal">
             <div class="modal_content">
