@@ -3,10 +3,13 @@ body {
     font-family: 'Comfortaa', cursive;
     margin: 0;
     padding: 0;
+    background: #50BDE4;
 }
 *{
     font-family: 'Comfortaa', cursive;
 }
+
+/*---------modal----------*/
 
 .modal{
     display: none;
@@ -48,10 +51,12 @@ body {
     cursor: pointer;
 }
 
+/*----------main----------*/
+
 .block1{
     position: relative;
     display: block;
-    background: #50BDE4;
+
     width: 100%;
     height: 710px;
     z-index: 2;
@@ -69,8 +74,6 @@ body {
     background-size: cover;
     background-position: 500px top;
 }
-
-
 
 .row{
     display: flex;
@@ -240,8 +243,12 @@ h2.reg_title, p.reg_title{
     padding: 10px;
     font-size: 18px;
     border-radius: 5px;
-    border: 1px solid #0E5463;
-    background: #d1ebf8;
+    border: 1px solid rgba(14, 84, 99, 0.36);
+    background: #f1faff;
+}
+
+.form_group input:focus{
+    outline-color: lightblue;
 }
 
 .form_group p{
@@ -275,4 +282,75 @@ footer{
 .text_footer p{
     padding: 0;
     margin: 5px;
+}
+
+/*----------Page_account----------*/
+
+.block_account{
+    display: block;
+    width: 70%;
+    height: content-box;
+    background: #F7F7F7;
+    margin: auto;
+    padding: 15px 15px 50px 15px;
+    border-radius: 20px;
+}
+
+.logo_title{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.logo_title img{
+    width: 10%;
+}
+
+.content{
+    padding: 0 50px;
+}
+
+.info_account{
+    display: flex;
+    width: auto;
+    height: content-box;
+    /*border: 1px solid grey;*/
+    padding: 30px;
+    position: relative;
+}
+
+.info_picture{
+    display: block;
+    width: 30%;
+    text-align: center;
+}
+
+img.account_pic{
+    border-radius: 50%;
+}
+
+.info_settings{
+    display: block;
+    margin: 0 0 0 150px;
+}
+
+input.input_account{
+    width: 100%;
+}
+
+.logout_button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+}
+
+button.account_logout{
+    background: firebrick;
+    opacity: 90%;
+}
+
+a.account_logout{
+    color: #F7F7F7;
+    text-decoration: none;
 }
