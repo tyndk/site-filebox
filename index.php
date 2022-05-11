@@ -54,8 +54,11 @@
             </div>
             <div class="column_input_file">
                 <div class="input_file">
-                    <input class="upload_file" type="text" placeholder="Вставьте ваш файл..."/>
-                    <button class="upload_file" type="submit"><img src="images/upload.png"></button>
+                    <form action="/php/titlefile_upload.php" enctype="multipart/form-data" method="post">
+                        <!-- <label class="label_upload_file" for="title_file">Загрузите файл</label> -->
+                        <input id="title_file" class="upload_file" type="file" multiple>
+                        <button class="upload_file" type="submit"><img src="images/upload.png"></button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -90,7 +93,7 @@
                     <h2 class="reg_title">Регистрация</h2>
                     <p class="reg_title">чтобы заполучить облако</p>
                     <div class="reg_input">
-                        <form action="reg.php" method="post">
+                        <form action="/php/reg.php" method="post">
                             <div class="form_group">
                                 <label>Email:</label>
                                 <input type="email" name="email"/>

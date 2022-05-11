@@ -15,4 +15,4 @@ if (ini_get("session.use_cookies")) {
 session_start();
 session_destroy();
 
-header('Location: index.php');
+header('Location: ../index.php');

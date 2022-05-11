@@ -27,7 +27,7 @@ else{
             $stmt->execute($params);
 
             echo $email . ' вы зарегистрировались. <br>';
-            include_once('page_reg.php');
+            include_once('../page_reg.php');
         }
     }
     else{

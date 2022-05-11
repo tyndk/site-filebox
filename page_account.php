@@ -16,7 +16,7 @@
 <body>
 <?php
 echo '<div style="display: none">';
-include_once ('db_connect.php');
+include_once ('/php/db_connect.php');
 echo '</div>';
 
 session_start();
@@ -51,14 +51,14 @@ $username=$stmt->fetch(PDO::FETCH_COLUMN);
                 <p>~0.1~/5 ГБ</p>
             </div>
             <div class="info_settings">
-                <form action="/" method="post">
+                <form action="account_info_change.php" method="post">
                     <div class="form_group">
                         <label for="name">Сменить имя пользователя</label>
-                        <input class="input_account" type="text" name="name"/>
+                        <input class="input_account" type="text" name="name" placeholder="<?php echo $username; ?>"/>
                     </div>
                     <div class="form_group">
                         <label for="name">Сменить email</label>
-                        <input class="input_account" type="text" name="name"/>
+                        <input class="input_account" type="text" name="email" placeholder="<?php echo $email; ?>"/>
                     </div>
                     <button class="account_save login" type="submit">Сохранить</button>
                 </form>

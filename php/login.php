@@ -28,7 +28,7 @@ else{
                     echo 'Логин норм';
                     session_start();
                     $_SESSION['email']="$email";
-                    header('Location: page_account.php');
+                    header('Location: ../page_account.php');
                 } else {
                     echo 'Неверный email или пароль1';
                 }
