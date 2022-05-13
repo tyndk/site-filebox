@@ -23,27 +23,9 @@
         }else{
             print ('<button id="button_account"><a href="page_account.php">' . $_SESSION['email'] . '</a></button>');
         }
+        include_once('modal_login.html');
             ?>
-        <!--Модальное окно входа-->
-        <div id="modal_login" class="modal">
-            <div class="modal_content">
-                <h1>Вход</h1>
-                <span class="close_modal">&times</span>
-                <form action="login.php" method="post">
-                    <div class="form_group">
-                        <label for="email">Ваш email: </label>
-                        <input type="email" name="email"><br>
-                    </div>
-                    <div class="form_group">
-                        <label for="password">Ваш пароль: </label>
-                        <input type="password" name="password">
-                    </div>
-                    <button class="login" type="submit">Войти</button>
-                </form>
-            </div>
-        </div>
-        <script src="js/modal.js"></script>
-        <!-- -->
+        
     </div>
     <div class="block1">
         <div class="row">
@@ -56,7 +38,7 @@
                 <div class="input_file">
                     <form action="/php/titlefile_upload.php" enctype="multipart/form-data" method="post">
                         <!-- <label class="label_upload_file" for="title_file">Загрузите файл</label> -->
-                        <input id="title_file" class="upload_file" type="file" multiple>
+                        <input id="title_file" class="upload_file" type="file" name="title_filename" multiple>
                         <button class="upload_file" type="submit"><img src="images/upload.png"></button>
                     </form>
                 </div>
