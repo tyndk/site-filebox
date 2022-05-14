@@ -56,6 +56,6 @@ $_GET['file']=$uploadfile;
 $_GET['link']=$link;
 $_GET['filename']=$filename;
 $_GET['dir']=$uploaddirfile;
-header('location: titlefile_link.php?file=' . $uploadfile);
+header('location: page_titlefilelink.php?file=' . $uploadfile);
 exit();
 ?>
