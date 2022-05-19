@@ -9,7 +9,7 @@ body {
     font-family: 'Comfortaa', cursive;
 }
 
-/*---------modal----------*/
+/*---------modal----------*//*---------modal----------*//*---------modal----------*/
 
 .modal{
     display: none;
@@ -58,7 +58,7 @@ body {
     cursor: pointer;
 }
 
-/*----------main----------*/
+/*----------main----------*//*----------main----------*//*----------main----------*/
 
 .block1{
     position: relative;
@@ -69,21 +69,24 @@ body {
     z-index: 2;
 }
 
-.block1::after{
+/* .block1::after{
     width: 100%;
     height: 100%;
     position: absolute;
+    left: 0%;
+    top: 30%;
     content: ' ';
-    z-index: 1;
+    z-index: -10;
     opacity: 50%;
     background-image: url("../images/logo.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: 500px top;
-}
+} */
 
 .row{
     display: flex;
+    padding-left: 50px;
 }
 
 .title_login{
@@ -118,10 +121,24 @@ button{
     color: #FFFFFF;
     font-size: 36px;
     text-align: center;
-    margin: 0 30px 0 150px;
+    /* margin: 0 30px 0 150px; */
     /*padding: 0 30px;*/
-    /*width: 50%;*/
+    width: 50%;
+    margin: auto;
 }
+
+.logo img,
+.logo_account{
+    transition: all 1s ease;
+}
+
+.logo img:hover,
+.logo_account:hover{
+    transform: scale(1.05);
+}
+/* .logo_account:hover{
+    filter: drop-shadow(0px 5px 5px gray); 
+} */
 
 .logo h1{
     margin-top: 0;
@@ -155,6 +172,14 @@ input.upload_file{
     font-size: 14px;
     opacity: 70%;
     overflow: hidden;
+}
+
+button.upload_file{
+    transition: 0.5s;
+}
+
+button.upload_file:hover{
+    opacity: 50%;
 }
 
 #title_file{
@@ -205,7 +230,7 @@ img.background{
     text-align: center;
     position: relative;
     color: #0E5463;
-    margin-top: 50px;
+    margin: 50px auto;
 }
 
 .info_features h1{
@@ -219,13 +244,21 @@ img.background{
 .info_features{
     width: 100%;
     display: flex;
+    align-items: flex-start;
 }
 
 .card_feature{
     position: relative;
+    flex: auto;
     z-index: 2;
-    margin: auto;
+    margin: 10px;
     padding-top: 30px;
+    transition: 1s ease;
+}
+
+.card_feature:hover{
+    transform: scale(1.1);
+    /* filter: drop-shadow(0px 4px 6px gray); */
 }
 
 .square:before {
@@ -326,12 +359,13 @@ footer{
     margin: 5px;
 }
 
-/*----------Page_account----------*/
+/*----------Page_account----------*//*----------Page_account----------*//*----------Page_account----------*/
 
 .block_account{
     display: block;
     width: 70%;
-    height: content-box;
+    box-sizing: border-box;
+    height: 100vh;/* content-box; */
     background: #F7F7F7;
     margin: auto;
     padding: 15px 15px 50px 15px;
@@ -339,17 +373,52 @@ footer{
 }
 
 .logo_title{
-    display: block;
-    margin: auto;
-    text-align: center;
+    display: inline-flex;
+    align-items: flex-end;
 }
 
 .logo_title img{
-    width: 10%;
+    max-width: 150%;
+    min-width: 100px;
+}
+
+.logo_account{
+    display: block;
+    width: 15%;
+}
+
+.logo_account img{
+    filter: drop-shadow(2px 2px 2px grey);
+}
+
+.menu_account{
+    display: flex;
+    margin: 50px;
+    align-items: baseline;
+}
+
+a.menu_link{
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s linear;
+}
+
+a.choosed{
+    font-weight: bold;
+    font-size: 24px;
+    /* text-decoration: underline; */
+}
+
+a.menu_link:hover{
+    opacity: 50%;
 }
 
 .content{
     padding: 0 50px;
+    margin-top: 50px;
 }
 
 .info_account{
@@ -357,23 +426,37 @@ footer{
     width: auto;
     height: content-box;
     /*border: 1px solid grey;*/
-    padding: 30px;
+    /* padding: 30px; */
     position: relative;
 }
 
 .info_picture{
     display: block;
-    width: 30%;
+    width: 50%;
     text-align: center;
+    padding: 0 100px 0 0;
+}
+
+.info_picture h3, h5{
+    margin: 10px;
+    padding: 0;
+}
+
+p.info_size{
+    margin-top: 45px;
 }
 
 img.account_pic{
     border-radius: 50%;
+    aspect-ratio: 1;
+    width: 30%;
 }
 
 .info_settings{
     display: block;
-    margin: 0 0 0 150px;
+    margin: 0 auto;
+    width: 70%;
+    /* margin: 0 0 0 150px; */
 }
 
 input.input_account{
@@ -397,21 +480,61 @@ a.account_logout{
     text-decoration: none;
 }
 
-/*Страница загрузки файла*/
+button.account_setting_select{
+    border: 1px solid grey;
+    display: block;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form_select{
+    display: block;
+    margin: auto;
+    text-align: -webkit-center;
+}
+
+.form_popup{
+    display: none;
+    padding: 5px 30px;
+    text-align: center;
+}
+
+.form_popup input{
+    padding: 5px;
+    margin: 5px 0;
+    width: -webkit-fill-available;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.form_popup form{
+    margin: auto;
+}
+
+button.account_login{
+    margin: 10px auto !important;
+    font-size: 14px !important;
+}
+
+/*Страница загрузки файла*//*Страница загрузки файла*//*Страница загрузки файла*/
 
 .container{
     display: block;
     box-sizing: content-box;
     background: #f1faff;
     width: 30%;
-    margin: 150px auto;
+    margin: 0 auto;
     padding: 50px;
     border-radius: 15px;
 }
 
 .content{
     display: block;
-    text-align: center;
+    /* text-align: center; */
 }
 
 img.doc{
@@ -422,6 +545,7 @@ img.doc{
 .file_info{
     padding: 5px;
     margin-top: 15px;
+    text-align: center;
 }
 
 p.file_title{
@@ -430,7 +554,7 @@ p.file_title{
 }
 
 
-@media (max-width: 939px) {
+@media (max-width: 939px) { /*939*/
     .input_file {
         display: inline-flex;
         text-align: center;
@@ -438,9 +562,15 @@ p.file_title{
     .upload_file{
         margin: 5px;
     }
+    .info{
+        width: auto;
+    }
+    .block_reg{
+        width: auto;
+    }
 }
 
-@media (max-width: 827px) {
+@media (max-width: 870px) { /*827*/
     .row{
         display: block;
         text-align: center;
@@ -452,5 +582,24 @@ p.file_title{
     .column_input_file{
         width: auto;
         display: inline-flex;
+    }
+    .logo img{
+        width: 100%;
+    }
+}
+
+@media (max-width: 720px) {
+    .logo_title{
+        align-items: center;
+    }
+}
+
+@media (max-width: 580px) {
+    .form_group button{
+        font-size: 14px;
+    }
+    .reg{
+        width: auto;
+        margin-right: 15px;
     }
 }

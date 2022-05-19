@@ -55,6 +55,9 @@
     ?>
 </head>
 <body>
+    <div class="logo_title">
+        <a href="../index.php"><img src="../images/logo.png"/></a>
+    </div>
     <div class="container">
         <div class="content">
             <img class="doc" src="../images/document.png">
